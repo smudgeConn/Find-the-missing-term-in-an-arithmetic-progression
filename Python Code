@@ -1,0 +1,9 @@
+def find_missing(sequence):
+    common_difference = int((sequence[-1]-sequence[0])/len(sequence))
+    missing_number = 0
+    for i in range(len(sequence)):
+        previous_number = sequence[i-1]
+        current_number = sequence[i]
+        if i != 0 and current_number != previous_number + common_difference:
+            missing_number = int(previous_number + common_difference)
+    return missing_number
