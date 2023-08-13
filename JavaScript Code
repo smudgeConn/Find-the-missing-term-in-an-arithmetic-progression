@@ -1,0 +1,18 @@
+var findMissing = function (list) {  
+
+  let lastNumber = list[list.length-1]
+
+  let firstNumber = list[0]
+
+  let commonDifference = (lastNumber - firstNumber)/list.length
+
+  let missingNumber = 0
+  for (let i = 0; i < list.length; i++) {
+    let previousNumber = list[i-1];
+    let currentNumber = list[i];
+    if (i != 0 && currentNumber != previousNumber + commonDifference) {
+      missingNumber = previousNumber + commonDifference
+    }
+  }
+  return missingNumber
+}
